@@ -1,0 +1,62 @@
+#include <stdio.h>
+#include <ctype.h>
+#include <string.h>
+
+int main()
+{
+    char text[] = "meet me at the usual place at ten rather than eight oclock";
+    char plain[200], cipher[200], decrypt[200];
+    int key[2][2] = {{9,4},{5,7}};
+    int invKey[2][2] = {{7,22},{21,9}};   // Inverse of key mod 26
+
+    int i, j = 0;
+
+    // Remove spaces and convert to uppercase
+    for(i = 0; text[i] != '\0'; i++)
+    {
+        if(isalpha(text[i]))
+            plain[j++] = toupper(text[i]);
+    }
+
+    // Padding if odd length
+    if(j % 2 != 0)
+        plain[j++] = 'X';
+
+    plain[j] = '\0';
+
+    // Encryption
+    for(i = 0; i < j; i += 2)
+    {
+        int p1 = plain[i] - 'A';
+        int p2 = plain[i+1] - 'A';
+
+        cipher[i]   = ((key[0][0]*p1 + key[0][1]*p2) % 26) + 'A';
+        cipher[i+1] = ((key[1][0]*p1 + key[1][1]*p2) % 26) + 'A';
+    }
+
+    cipher[j] = '\0';
+
+    // Decryption
+    for(i = 0; i < j; i += 2)
+    {
+        int c1 = cipher[i] - 'A';
+        int c2 = cipher[i+1] - 'A';
+
+        decrypt[i]   = ((invKey[0][0]*c1 + invKey[0][1]*c2) % 26) + 'A';
+        decrypt[i+1] = ((invKey[1][0]*c1 + invKey[1][1]*c2) % 26) + 'A';
+    }
+
+    decrypt[j] = '\0';
+
+    printf("Hill Cipher (2x2)\n\n");
+
+    printf("Key Matrix:\n");
+    printf("9 4\n");
+    printf("5 7\n\n");
+
+    printf("Plain Text    : %s\n", plain);
+    printf("Cipher Text   : %s\n", cipher);
+    printf("Decrypted Text: %s\n", decrypt);
+
+    return 0;
+}
