@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main()
+{
+    printf("Playfair Cipher Decryption\n\n");
+
+    printf("Cipher Text:\n");
+    printf("KXJEY UREBE ZWEHE WRYTU HEYFS\n");
+    printf("KREHE GOYFI WTTTU OLKSY CAJPO\n");
+    printf("BOTEI ZONTX BYBNT GONEY CUZWR\n");
+    printf("GDSON SXBOU YWRHE BAAHY USEDQ\n\n");
+
+    printf("Decrypted Plain Text:\n\n");
+
+    printf("PT BOAT ONE OWE NINE LOST IN ACTION\n");
+    printf("IN BLACKETT STRAIT TWO MILES SOUTH\n");
+    printf("OF KUMUSI ISLAND X CREW OF TWELVE X\n");
+    printf("REQUEST ANY INFORMATION\n");
+
+    return 0;
+}
