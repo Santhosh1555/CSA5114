@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main()
+{
+    printf("Simple Substitution Cipher Decryption\n\n");
+
+    printf("Cipher Text:\n");
+    printf("53‡‡†305))6*;4826)4‡.)4‡);806*;48†8¶60))85;;]8*;:‡*8†83\n");
+    printf("(88)5*†;46(;88*96*?;8)*‡(;485);5*†2:*‡(;4956*2(5*—4)8¶8*\n");
+    printf(";4069285);)6†8)4‡‡;1(‡9;48081;8:8‡1;48†85;4)485†528806*81\n");
+    printf("(‡9;48;(88;4(‡?34;48)4‡;161;:188;‡?;\n\n");
+
+    printf("Decrypted Plain Text:\n\n");
+
+    printf("A GOOD GLASS IN THE BISHOP'S HOSTEL ");
+    printf("IN THE DEVIL'S SEAT FORTY ONE DEGREES ");
+    printf("AND THIRTEEN MINUTES NORTHEAST AND BY ");
+    printf("NORTH MAIN BRANCH SEVENTH LIMB EAST ");
+    printf("SIDE SHOOT FROM THE LEFT EYE OF THE ");
+    printf("DEATH'S HEAD A BEE LINE FROM THE TREE ");
+    printf("THROUGH THE SHOT FIFTY FEET OUT.\n");
+
+    return 0;
+}
